@@ -1,0 +1,152 @@
+/* Birmingham Roofing Solutions — lead-gen site
+   Replace brand tokens (--brand, --accent), phone, and content placeholders. */
+:root{
+  --slate:#1f2933; --slate-2:#323f4b; --ink:#111418; --muted:#5b6770;
+  --brand:#16324f;        /* deep roof-slate blue */
+  --accent:#ff6a2b;       /* high-urgency CTA orange */
+  --accent-dk:#e2541a;
+  --bg:#ffffff; --bg-soft:#f5f7f9; --line:#e3e8ec;
+  --ok:#1f9d55; --star:#ffb400;
+  --radius:14px; --shadow:0 8px 30px rgba(16,32,49,.12);
+  --wrap:1140px; --font:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.6}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.15;margin:0 0 .5em;color:var(--brand)}
+h1{font-size:clamp(2rem,5vw,3.2rem)}
+h2{font-size:clamp(1.5rem,3.5vw,2.3rem)}
+.lead{font-size:1.15rem;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;border:0;cursor:pointer;
+  padding:.95rem 1.5rem;border-radius:999px;font-size:1rem;transition:.15s transform,.15s box-shadow}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 6px 18px rgba(255,106,43,.4)}
+.btn-primary:hover{background:var(--accent-dk)}
+.btn-ghost{background:#fff;color:var(--brand);border:2px solid var(--line)}
+.btn-call{background:var(--ok);color:#fff}
+.section{padding:72px 0}
+.section.alt{background:var(--bg-soft)}
+.center{text-align:center}
+.grid{display:grid;gap:24px}
+.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;font-weight:700;color:var(--accent)}
+
+/* ---------- Top bar + header ---------- */
+.topbar{background:var(--brand);color:#fff;font-size:.9rem}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 20px;flex-wrap:wrap}
+.topbar a{color:#fff;font-weight:600}
+.topbar .badges span{margin-left:14px;opacity:.95}
+header.site{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 20px}
+.logo{font-weight:800;font-size:1.3rem;color:var(--brand);display:flex;align-items:center;gap:.5rem}
+.logo b{color:var(--accent)}
+nav.main a{font-weight:600;color:var(--slate-2);margin:0 12px}
+nav.main a:hover{color:var(--accent)}
+.header-cta{display:flex;align-items:center;gap:12px}
+.header-phone{font-weight:800;color:var(--brand);font-size:1.05rem}
+.nav-toggle{display:none;background:none;border:0;font-size:1.6rem;cursor:pointer}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;color:#fff;background:linear-gradient(rgba(16,32,49,.72),rgba(16,32,49,.78)),
+  url("https://images.unsplash.com/photo-1632759145351-1d592919f522?q=80&w=1600&auto=format") center/cover}
+.hero .wrap{padding:84px 20px}
+.hero h1{color:#fff;max-width:16ch}
+.hero p{color:#e7edf2;max-width:54ch;font-size:1.2rem}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+.hero-trust{display:flex;gap:22px;flex-wrap:wrap;margin-top:30px;align-items:center;font-weight:600}
+.hero-trust .stars{color:var(--star)}
+.badge-pill{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);padding:6px 12px;border-radius:999px;font-size:.85rem}
+
+/* ---------- Trust bar ---------- */
+.trustbar{background:#fff;border-bottom:1px solid var(--line)}
+.trustbar .wrap{display:flex;gap:28px;flex-wrap:wrap;justify-content:center;align-items:center;padding:18px 20px;color:var(--muted);font-weight:600}
+.trustbar b{color:var(--brand)}
+
+/* ---------- Cards ---------- */
+.cards{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);transition:.18s}
+.card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.card .ico{font-size:2rem}
+.card h3{margin:.4rem 0}
+.card a.more{color:var(--accent);font-weight:700}
+
+/* ---------- Why / steps ---------- */
+.why{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.why .item{padding:18px;border-left:3px solid var(--accent);background:#fff;border-radius:8px}
+.steps{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));counter-reset:s}
+.step{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 22px}
+.step::before{counter-increment:s;content:counter(s);position:absolute;top:-18px;left:22px;width:36px;height:36px;
+  background:var(--accent);color:#fff;border-radius:50%;display:grid;place-items:center;font-weight:800}
+
+/* ---------- Estimator ---------- */
+.estimator{background:var(--brand);color:#fff;border-radius:var(--radius);padding:32px;box-shadow:var(--shadow)}
+.estimator h3{color:#fff}
+.estimator label{display:block;font-weight:600;margin:14px 0 6px;font-size:.95rem}
+.estimator select,.estimator input{width:100%;padding:.8rem;border-radius:10px;border:1px solid #2c4a68;background:#0f2740;color:#fff;font-size:1rem}
+.est-result{margin-top:18px;background:rgba(255,255,255,.1);border:1px dashed rgba(255,255,255,.4);border-radius:10px;padding:16px;display:none}
+.est-result.show{display:block}
+.est-result .price{font-size:1.8rem;font-weight:800;color:#fff}
+
+/* ---------- Reviews ---------- */
+.reviews{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.review{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.review .stars{color:var(--star);font-size:1.1rem}
+.review cite{display:block;margin-top:10px;font-weight:700;color:var(--brand);font-style:normal}
+
+/* ---------- Areas ---------- */
+.areas{display:flex;flex-wrap:wrap;gap:10px}
+.areas a{background:#fff;border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-weight:600;color:var(--slate-2)}
+.areas a:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* ---------- Final CTA + form ---------- */
+.cta-band{background:linear-gradient(120deg,var(--brand),#0f2740);color:#fff}
+.cta-band h2{color:#fff}
+.quote-form{display:grid;gap:12px;max-width:520px}
+.quote-form input,.quote-form select,.quote-form textarea{padding:.85rem;border-radius:10px;border:1px solid var(--line);font-size:1rem;font-family:inherit}
+.quote-form textarea{min-height:90px}
+
+/* ---------- Footer ---------- */
+footer.site{background:var(--ink);color:#cbd5dd;padding:54px 0 90px}
+footer.site .wrap{display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+footer.site h4{color:#fff;margin-bottom:12px}
+footer.site a{color:#cbd5dd;display:block;padding:3px 0}
+footer.site a:hover{color:var(--accent)}
+
+/* ---------- Sticky mobile call/quote bar ---------- */
+.mobile-bar{position:fixed;bottom:0;left:0;right:0;z-index:50;display:none;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+.mobile-bar a{padding:14px;text-align:center;font-weight:800;color:#fff}
+.mobile-bar .call{background:var(--ok)}
+.mobile-bar .quote{background:var(--accent)}
+
+/* ---------- AI chat widget ---------- */
+#chat-launcher{position:fixed;right:20px;bottom:24px;z-index:60;background:var(--accent);color:#fff;border:0;
+  border-radius:999px;padding:14px 20px;font-weight:800;cursor:pointer;box-shadow:var(--shadow);display:flex;gap:.5rem;align-items:center}
+#chat-launcher:hover{background:var(--accent-dk)}
+#chat-panel{position:fixed;right:20px;bottom:84px;z-index:61;width:360px;max-width:calc(100vw - 40px);height:520px;max-height:70vh;
+  background:#fff;border-radius:16px;box-shadow:var(--shadow);display:none;flex-direction:column;overflow:hidden;border:1px solid var(--line)}
+#chat-panel.open{display:flex}
+#chat-panel header{background:var(--brand);color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center}
+#chat-panel header b{font-size:1rem}
+#chat-panel .sub{font-size:.78rem;opacity:.85}
+#chat-log{flex:1;overflow-y:auto;padding:14px;background:var(--bg-soft);display:flex;flex-direction:column;gap:10px}
+.msg{padding:10px 13px;border-radius:14px;max-width:85%;font-size:.93rem}
+.msg.bot{background:#fff;border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px}
+.msg.user{background:var(--accent);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+#chat-form{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line);background:#fff}
+#chat-input{flex:1;padding:.7rem;border:1px solid var(--line);border-radius:999px;font-size:.95rem;font-family:inherit}
+#chat-form button{background:var(--accent);color:#fff;border:0;border-radius:50%;width:42px;height:42px;font-size:1.1rem;cursor:pointer}
+
+/* ---------- Responsive ---------- */
+@media (max-width:860px){
+  nav.main{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:10px 20px}
+  nav.main.open{display:block}
+  nav.main a{display:block;margin:10px 0}
+  .nav-toggle{display:block}
+  .header-phone{display:none}
+  .mobile-bar{display:grid}
+  body{padding-bottom:54px}
+  #chat-launcher{bottom:70px}
+  #chat-panel{bottom:128px}
+}
