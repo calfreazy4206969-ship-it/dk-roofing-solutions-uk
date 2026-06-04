@@ -94,7 +94,7 @@ nav.main a:hover{color:var(--accent)}
 .steps{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));counter-reset:s}
 .step{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 22px}
 .step::before{counter-increment:s;content:counter(s);position:absolute;top:-18px;left:22px;width:36px;height:36px;
-  background:var(--accent);color:#fff;border-radius:50%;display:grid;place-items:center;font-weight:800}
+  background:var(--accent);color:#fff;border-radius:50%;display:grid;place-items:center;font-weight:700;font-family:var(--font-heading);font-size:1.1rem}
 
 /* ---------- Estimator ---------- */
 .estimator{background:var(--brand);color:#fff;border-radius:var(--radius);padding:32px;box-shadow:var(--shadow)}
@@ -126,7 +126,7 @@ nav.main a:hover{color:var(--accent)}
 /* ---------- Footer ---------- */
 footer.site{background:var(--ink);color:#cbd5dd;padding:54px 0 90px}
 footer.site .wrap{display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
-footer.site h4{color:#fff;margin-bottom:12px}
+footer.site h4{color:#fff;margin-bottom:12px;font-family:var(--font-heading);letter-spacing:.05em;font-size:1rem}
 footer.site a{color:#cbd5dd;display:block;padding:3px 0}
 footer.site a:hover{color:var(--accent)}
 
