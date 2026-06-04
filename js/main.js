@@ -38,3 +38,41 @@ window.__submitQuote = function (e) {
 
 // Optional: populate live reviews from your feed
 // fetch('/api/reviews').then(r=>r.json()).then(renderReviews)
+
+// --- Carousel ---
+(function(){
+  const track = document.getElementById('carouselTrack');
+  if(!track) return;
+  const slides = track.querySelectorAll('.carousel-slide');
+  const total = slides.length;
+  let current = 0;
+  let timer;
+
+  function getSlidesVisible(){
+    if(window.innerWidth <= 860) return 1;
+    if(window.innerWidth <= 1100) return 2;
+    return 3;
+  }
+
+  function goTo(idx){
+    const vis = getSlidesVisible();
+    const max = total - vis;
+    current = Math.max(0, Math.min(idx, max));
+    const slideWidth = slides[0].getBoundingClientRect().width + 16;
+    track.style.transform = `translateX(-${current * slideWidth}px)`;
+  }
+
+  function next(){ goTo(current + 1 >= total - getSlidesVisible() + 1 ? 0 : current + 1); }
+  function prev(){ goTo(current - 1 < 0 ? total - getSlidesVisible() : current - 1); }
+
+  function startAuto(){ timer = setInterval(next, 3500); }
+  function stopAuto(){ clearInterval(timer); }
+
+  document.getElementById('carouselNext').addEventListener('click', function(){ stopAuto(); next(); startAuto(); });
+  document.getElementById('carouselPrev').addEventListener('click', function(){ stopAuto(); prev(); startAuto(); });
+  track.parentElement.addEventListener('mouseenter', stopAuto);
+  track.parentElement.addEventListener('mouseleave', startAuto);
+  window.addEventListener('resize', function(){ goTo(0); });
+
+  startAuto();
+})();

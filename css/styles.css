@@ -154,6 +154,20 @@ footer.site a:hover{color:var(--accent)}
 #chat-input{flex:1;padding:.7rem;border:1px solid var(--line);border-radius:999px;font-size:.95rem;font-family:inherit}
 #chat-form button{background:var(--accent);color:#fff;border:0;border-radius:50%;width:42px;height:42px;font-size:1.1rem;cursor:pointer}
 
+/* ---------- Carousel ---------- */
+.carousel-section{padding:72px 0;background:var(--bg-soft);overflow:hidden}
+.carousel-track-wrap{position:relative;overflow:hidden}
+.carousel-track{display:flex;transition:transform .4s ease;will-change:transform}
+.carousel-slide{flex:0 0 calc(33.333% - 16px);margin:0 8px;position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3}
+.carousel-slide img{width:100%;height:100%;object-fit:cover;display:block}
+.carousel-cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(16,32,49,.85));color:#fff;font-weight:600;font-size:.9rem;padding:28px 14px 12px;font-family:var(--font)}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:var(--brand);color:#fff;border:0;width:44px;height:44px;border-radius:50%;font-size:1.2rem;cursor:pointer;opacity:.9;transition:.15s}
+.carousel-btn:hover{opacity:1;background:var(--accent)}
+.carousel-btn.prev{left:10px}
+.carousel-btn.next{right:10px}
+@media(max-width:860px){.carousel-slide{flex:0 0 calc(100% - 16px)}}
+@media(min-width:861px) and (max-width:1100px){.carousel-slide{flex:0 0 calc(50% - 16px)}}
+
 /* ---------- Responsive ---------- */
 @media (max-width:860px){
   nav.main{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:10px 20px}
