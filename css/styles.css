@@ -11,7 +11,7 @@
   --radius:14px; --shadow:0 8px 30px rgba(16,32,49,.12);
   --wrap:1140px;
   --font:'Inter',system-ui,-apple-system,Roboto,Arial,sans-serif;
-  --font-heading:'Oswald',system-ui,Arial,sans-serif;
+  --font-heading:'Oswald',system-ui,-apple-system,Arial,sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
