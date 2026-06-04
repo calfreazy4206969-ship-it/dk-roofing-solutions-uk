@@ -165,10 +165,8 @@ footer.site a:hover{color:var(--accent)}
 .carousel-btn:hover{opacity:1;background:var(--accent)}
 .carousel-btn.prev{left:10px}
 .carousel-btn.next{right:10px}
-@media(max-width:860px){.carousel-slide{flex:0 0 calc(100% - 16px)}}
-@media(min-width:861px) and (max-width:1100px){.carousel-slide{flex:0 0 calc(50% - 16px)}}
-
 /* ---------- Responsive ---------- */
+@media(min-width:861px) and (max-width:1100px){.carousel-slide{flex:0 0 calc(50% - 16px)}}
 @media (max-width:860px){
   nav.main{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:10px 20px}
   nav.main.open{display:block}
@@ -179,4 +177,5 @@ footer.site a:hover{color:var(--accent)}
   body{padding-bottom:54px}
   #chat-launcher{bottom:70px}
   #chat-panel{bottom:128px}
+  .carousel-slide{flex:0 0 calc(100% - 16px)}
 }

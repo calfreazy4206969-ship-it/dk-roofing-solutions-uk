@@ -59,13 +59,14 @@ window.__submitQuote = function (e) {
     const max = total - vis;
     current = Math.max(0, Math.min(idx, max));
     const slideWidth = slides[0].getBoundingClientRect().width + 16;
+    if(slideWidth <= 16) return;
     track.style.transform = `translateX(-${current * slideWidth}px)`;
   }
 
-  function next(){ goTo(current + 1 >= total - getSlidesVisible() + 1 ? 0 : current + 1); }
+  function next(){ goTo(current >= total - getSlidesVisible() ? 0 : current + 1); }
   function prev(){ goTo(current - 1 < 0 ? total - getSlidesVisible() : current - 1); }
 
-  function startAuto(){ timer = setInterval(next, 3500); }
+  function startAuto(){ stopAuto(); timer = setInterval(next, 3500); }
   function stopAuto(){ clearInterval(timer); }
 
   document.getElementById('carouselNext').addEventListener('click', function(){ stopAuto(); next(); startAuto(); });
