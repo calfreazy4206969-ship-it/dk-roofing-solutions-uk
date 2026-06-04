@@ -2,13 +2,16 @@
    Replace brand tokens (--brand, --accent), phone, and content placeholders. */
 :root{
   --slate:#1f2933; --slate-2:#323f4b; --ink:#111418; --muted:#5b6770;
-  --brand:#16324f;        /* deep roof-slate blue */
-  --accent:#ff6a2b;       /* high-urgency CTA orange */
+  --brand:#16324f;
+  --accent:#ff6a2b;
   --accent-dk:#e2541a;
+  --emergency:#cc2200;
   --bg:#ffffff; --bg-soft:#f5f7f9; --line:#e3e8ec;
   --ok:#1f9d55; --star:#ffb400;
   --radius:14px; --shadow:0 8px 30px rgba(16,32,49,.12);
-  --wrap:1140px; --font:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+  --wrap:1140px;
+  --font:'Inter',system-ui,-apple-system,Roboto,Arial,sans-serif;
+  --font-heading:'Oswald',system-ui,Arial,sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -16,7 +19,7 @@ body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
-h1,h2,h3{line-height:1.15;margin:0 0 .5em;color:var(--brand)}
+h1,h2,h3{line-height:1.15;margin:0 0 .5em;color:var(--brand);font-family:var(--font-heading);text-transform:uppercase;letter-spacing:.02em}
 h1{font-size:clamp(2rem,5vw,3.2rem)}
 h2{font-size:clamp(1.5rem,3.5vw,2.3rem)}
 .lead{font-size:1.15rem;color:var(--muted)}
@@ -40,7 +43,7 @@ h2{font-size:clamp(1.5rem,3.5vw,2.3rem)}
 .topbar .badges span{margin-left:14px;opacity:.95}
 header.site{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--line)}
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 20px}
-.logo{font-weight:800;font-size:1.3rem;color:var(--brand);display:flex;align-items:center;gap:.5rem}
+.logo{font-family:var(--font-heading);font-weight:700;font-size:1.4rem;color:var(--brand);display:flex;align-items:center;gap:.5rem;text-transform:uppercase;letter-spacing:.05em}
 .logo b{color:var(--accent)}
 nav.main a{font-weight:600;color:var(--slate-2);margin:0 12px}
 nav.main a:hover{color:var(--accent)}
