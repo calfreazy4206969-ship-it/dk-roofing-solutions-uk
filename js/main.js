@@ -77,3 +77,26 @@ window.__submitQuote = function (e) {
 
   startAuto();
 })();
+
+// --- Before/After Sliders ---
+['1','2'].forEach(function(id){
+  const slider = document.getElementById('baSlider'+id);
+  if(!slider) return;
+  const wrap = document.getElementById('baBeforeWrap'+id);
+  const handle = document.getElementById('baHandle'+id);
+  let dragging = false;
+
+  function setPos(x){
+    const rect = slider.getBoundingClientRect();
+    const pct = Math.max(0, Math.min(1, (x - rect.left) / rect.width));
+    wrap.style.width = (pct * 100) + '%';
+    handle.style.left = (pct * 100) + '%';
+  }
+
+  handle.addEventListener('mousedown', function(e){ dragging = true; e.preventDefault(); });
+  document.addEventListener('mousemove', function(e){ if(dragging) setPos(e.clientX); });
+  document.addEventListener('mouseup', function(){ dragging = false; });
+  handle.addEventListener('touchstart', function(e){ dragging = true; e.preventDefault(); }, {passive:false});
+  document.addEventListener('touchmove', function(e){ if(dragging) setPos(e.touches[0].clientX); }, {passive:true});
+  document.addEventListener('touchend', function(){ dragging = false; });
+});
