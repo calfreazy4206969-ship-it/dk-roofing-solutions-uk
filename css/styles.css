@@ -60,7 +60,7 @@ nav.main a:hover{color:var(--accent)}
 /* ---------- Hero ---------- */
 .hero{position:relative;color:#fff;background:linear-gradient(rgba(16,32,49,.72),rgba(16,32,49,.78)),
   url("https://images.unsplash.com/photo-1632759145351-1d592919f522?q=80&w=1600&auto=format") center/cover}
-.hero .wrap{padding:84px 20px}
+.hero .wrap{padding:100px 20px 90px}
 .hero h1{color:#fff;max-width:16ch}
 .hero p{color:#e7edf2;max-width:54ch;font-size:1.2rem}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
