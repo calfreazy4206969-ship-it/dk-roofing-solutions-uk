@@ -78,19 +78,6 @@ window.__submitQuote = function (e) {
   startAuto();
 })();
 
-// --- Photo gallery slideshow ---
-(function(){
-  const gallery = document.getElementById('baGallery');
-  if(!gallery) return;
-  const slides = gallery.querySelectorAll('.ba-gal-slide');
-  let current = 0;
-  setInterval(function(){
-    slides[current].classList.remove('active');
-    current = (current + 1) % slides.length;
-    slides[current].classList.add('active');
-  }, 3000);
-})();
-
 // --- Before/After Sliders ---
 ['1','2'].forEach(function(id){
   const slider = document.getElementById('baSlider'+id);
