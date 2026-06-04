@@ -167,11 +167,11 @@ footer.site a:hover{color:var(--accent)}
 .carousel-btn.next{right:10px}
 /* ---------- Before / After ---------- */
 .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
-.ba-slider{position:relative;border-radius:var(--radius);overflow:hidden;cursor:col-resize;user-select:none}
-.ba-after{width:100%;height:auto;display:block}
-.ba-before{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1}
-.ba-handle{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:3px;background:rgba(255,255,255,.7);cursor:col-resize;display:flex;align-items:center;justify-content:center}
-.ba-handle span{background:#fff;color:var(--brand);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.3);flex-shrink:0}
+.ba-slider3{position:relative;overflow:hidden;border-radius:var(--radius);cursor:col-resize;user-select:none}
+.ba-s3-ghost{width:100%;height:auto;display:block;visibility:hidden}
+.ba-s3-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba-s3-handle{position:absolute;top:0;bottom:0;width:3px;background:rgba(255,255,255,.85);transform:translateX(-50%);display:flex;align-items:center;justify-content:center;z-index:10;cursor:col-resize}
+.ba-s3-handle span{background:#fff;color:var(--brand);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.3);flex-shrink:0}
 .ba-cap{text-align:center;margin-top:10px;font-weight:600;color:var(--muted)}
 @media(max-width:700px){.ba-grid{grid-template-columns:1fr}}
 
