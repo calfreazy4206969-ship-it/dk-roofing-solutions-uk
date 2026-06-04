@@ -78,44 +78,19 @@ window.__submitQuote = function (e) {
   startAuto();
 })();
 
-// --- 3-way sliders ---
-[{s:'baSlider1',h1:'ba1-h1',h2:'ba1-h2'},{s:'baSlider2',h1:'ba2-h1',h2:'ba2-h2'}].forEach(function(cfg){
-  const slider = document.getElementById(cfg.s);
-  if(!slider) return;
-  const imgs = slider.querySelectorAll('.ba-s3-img');
-  const handle1 = document.getElementById(cfg.h1);
-  const handle2 = document.getElementById(cfg.h2);
-  let pos1 = 33, pos2 = 66;
-  let activeHandle = null;
-  const MIN_GAP = 5;
+// --- Photo galleries with arrows ---
+[{g:'baGallery1',prev:'bg1-prev',next:'bg1-next'},{g:'baGallery2',prev:'bg2-prev',next:'bg2-next'}].forEach(function(cfg){
+  const gallery = document.getElementById(cfg.g);
+  if(!gallery) return;
+  const imgs = gallery.querySelectorAll('.ba-gal-img');
+  let current = 0;
 
-  function update(){
-    handle1.style.left = pos1 + '%';
-    handle2.style.left = pos2 + '%';
-    imgs[0].style.clipPath = 'inset(0 ' + (100 - pos1) + '% 0 0)';
-    imgs[1].style.clipPath = 'inset(0 ' + (100 - pos2) + '% 0 ' + pos1 + '%)';
-    imgs[2].style.clipPath = 'inset(0 0 0 ' + pos2 + '%)';
+  function show(idx){
+    imgs[current].classList.remove('active');
+    current = (idx + imgs.length) % imgs.length;
+    imgs[current].classList.add('active');
   }
 
-  function setPos(x){
-    const rect = slider.getBoundingClientRect();
-    const pct = Math.max(0, Math.min(100, (x - rect.left) / rect.width * 100));
-    if(activeHandle === handle1){
-      pos1 = Math.min(pct, pos2 - MIN_GAP);
-    } else {
-      pos2 = Math.max(pct, pos1 + MIN_GAP);
-    }
-    update();
-  }
-
-  handle1.addEventListener('mousedown', function(e){ activeHandle = handle1; e.preventDefault(); });
-  handle2.addEventListener('mousedown', function(e){ activeHandle = handle2; e.preventDefault(); });
-  document.addEventListener('mousemove', function(e){ if(activeHandle) setPos(e.clientX); });
-  document.addEventListener('mouseup', function(){ activeHandle = null; });
-  handle1.addEventListener('touchstart', function(e){ activeHandle = handle1; e.preventDefault(); }, {passive:false});
-  handle2.addEventListener('touchstart', function(e){ activeHandle = handle2; e.preventDefault(); }, {passive:false});
-  document.addEventListener('touchmove', function(e){ if(activeHandle) setPos(e.touches[0].clientX); }, {passive:true});
-  document.addEventListener('touchend', function(){ activeHandle = null; });
-
-  update();
+  document.getElementById(cfg.prev).addEventListener('click', function(){ show(current - 1); });
+  document.getElementById(cfg.next).addEventListener('click', function(){ show(current + 1); });
 });
