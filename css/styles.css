@@ -40,7 +40,7 @@ h2{font-size:clamp(1.5rem,3.5vw,2.3rem)}
 .emergency-bar{background:var(--emergency);color:#fff;font-family:var(--font-heading);font-size:.85rem;letter-spacing:.08em}
 .emergency-bar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:9px 20px;flex-wrap:wrap}
 .emergency-cta{background:#fff;color:var(--emergency);font-weight:700;padding:5px 16px;border-radius:4px;white-space:nowrap;font-size:.8rem}
-.emergency-cta:hover{background:#f0f0f0}
+.emergency-cta:hover{background:rgba(255,255,255,.85)}
 
 /* ---------- Top bar + header ---------- */
 .topbar{background:var(--brand);color:#fff;font-size:.9rem}
