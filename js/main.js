@@ -85,6 +85,14 @@ window.__submitQuote = function (e) {
   const wrap = document.getElementById('baBeforeWrap'+id);
   const handle = document.getElementById('baHandle'+id);
   let dragging = false;
+  const beforeImg = wrap.querySelector('img');
+
+  function syncWidth(){
+    const w = slider.getBoundingClientRect().width;
+    if(w > 0) beforeImg.style.width = w + 'px';
+  }
+  syncWidth();
+  window.addEventListener('resize', syncWidth);
 
   function setPos(x){
     const rect = slider.getBoundingClientRect();
