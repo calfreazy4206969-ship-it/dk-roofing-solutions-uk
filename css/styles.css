@@ -73,6 +73,12 @@ nav.main a:hover{color:var(--accent)}
 .trustbar .wrap{display:flex;gap:28px;flex-wrap:wrap;justify-content:center;align-items:center;padding:18px 20px;color:var(--muted);font-weight:600}
 .trustbar b{color:var(--brand)}
 
+/* ---------- Accreditations bar ---------- */
+.accred-bar{background:#fff;border-bottom:2px solid var(--accent);padding:18px 0}
+.accred-bar .wrap{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px}
+.accred-item{display:flex;align-items:center;gap:6px;padding:8px 16px;border:1px solid var(--line);border-radius:6px;font-weight:600;font-size:.9rem;color:var(--brand);background:#fafbfc;white-space:nowrap}
+.accred-icon{color:var(--accent);font-size:1rem}
+
 /* ---------- Cards ---------- */
 .cards{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);transition:.18s}
