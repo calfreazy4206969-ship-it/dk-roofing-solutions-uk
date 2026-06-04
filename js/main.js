@@ -82,22 +82,14 @@ window.__submitQuote = function (e) {
 ['1','2'].forEach(function(id){
   const slider = document.getElementById('baSlider'+id);
   if(!slider) return;
-  const wrap = document.getElementById('baBeforeWrap'+id);
+  const beforeImg = slider.querySelector('.ba-before');
   const handle = document.getElementById('baHandle'+id);
   let dragging = false;
-  const beforeImg = wrap.querySelector('img');
-
-  function syncWidth(){
-    const w = slider.getBoundingClientRect().width;
-    if(w > 0) beforeImg.style.width = w + 'px';
-  }
-  syncWidth();
-  window.addEventListener('resize', syncWidth);
 
   function setPos(x){
     const rect = slider.getBoundingClientRect();
     const pct = Math.max(0, Math.min(1, (x - rect.left) / rect.width));
-    wrap.style.width = (pct * 100) + '%';
+    beforeImg.style.opacity = 1 - pct;
     handle.style.left = (pct * 100) + '%';
   }
 

@@ -167,11 +167,10 @@ footer.site a:hover{color:var(--accent)}
 .carousel-btn.next{right:10px}
 /* ---------- Before / After ---------- */
 .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
-.ba-slider{position:relative;overflow:hidden;border-radius:var(--radius);aspect-ratio:4/3;cursor:col-resize;user-select:none}
-.ba-slider img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.ba-before-wrap{position:absolute;inset:0;overflow:hidden;width:50%}
-.ba-before{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover}
-.ba-handle{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:4px;background:#fff;cursor:col-resize;display:flex;align-items:center;justify-content:center}
+.ba-slider{position:relative;border-radius:var(--radius);overflow:hidden;cursor:col-resize;user-select:none;background:#1a2a3a}
+.ba-after{width:100%;height:auto;display:block}
+.ba-before{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:1}
+.ba-handle{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:3px;background:rgba(255,255,255,.7);cursor:col-resize;display:flex;align-items:center;justify-content:center}
 .ba-handle span{background:#fff;color:var(--brand);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.3);flex-shrink:0}
 .ba-cap{text-align:center;margin-top:10px;font-weight:600;color:var(--muted)}
 @media(max-width:700px){.ba-grid{grid-template-columns:1fr}}
