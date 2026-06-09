@@ -78,6 +78,42 @@ window.__submitQuote = function (e) {
   startAuto();
 })();
 
+// --- Reviews carousel ---
+(function(){
+  const track = document.getElementById('reviewTrack');
+  if(!track) return;
+  const slides = track.querySelectorAll('.carousel-slide');
+  const total = slides.length;
+  let current = 0;
+  let timer;
+
+  function getSlidesVisible(){
+    if(window.innerWidth <= 860) return 1;
+    if(window.innerWidth <= 1100) return 2;
+    return 3;
+  }
+
+  function goTo(idx){
+    const vis = getSlidesVisible();
+    current = Math.max(0, Math.min(idx, total - vis));
+    const slideWidth = slides[0].getBoundingClientRect().width + 16;
+    if(slideWidth <= 16) return;
+    track.style.transform = 'translateX(-' + (current * slideWidth) + 'px)';
+  }
+
+  function next(){ goTo(current >= total - getSlidesVisible() ? 0 : current + 1); }
+  function prev(){ goTo(current - 1 < 0 ? total - getSlidesVisible() : current - 1); }
+  function startAuto(){ stopAuto(); timer = setInterval(next, 4500); }
+  function stopAuto(){ clearInterval(timer); }
+
+  document.getElementById('reviewNext').addEventListener('click', function(){ stopAuto(); next(); startAuto(); });
+  document.getElementById('reviewPrev').addEventListener('click', function(){ stopAuto(); prev(); startAuto(); });
+  track.parentElement.addEventListener('mouseenter', stopAuto);
+  track.parentElement.addEventListener('mouseleave', startAuto);
+  window.addEventListener('resize', function(){ goTo(0); });
+  startAuto();
+})();
+
 // --- Photo galleries with arrows ---
 [{g:'baGallery1',prev:'bg1-prev',next:'bg1-next'},{g:'baGallery2',prev:'bg2-prev',next:'bg2-next'}].forEach(function(cfg){
   const gallery = document.getElementById(cfg.g);
