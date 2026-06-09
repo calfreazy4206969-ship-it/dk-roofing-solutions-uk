@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Areas We Cover | DK Roofing Solutions — Birmingham &amp; West Midlands Roofers</title>
+<meta name="description" content="DK Roofing Solutions cover all of Birmingham and the West Midlands within a 20-mile radius of Kings Heath B14. See every postcode area we serve.">
+<link rel="canonical" href="https://www.dkroofingsolutionsuk.co.uk/areas/">
+<link rel="stylesheet" href="../css/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- Leaflet map -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+
+<style>
+  /* ---- Hero ---- */
+  .page-hero{background:linear-gradient(rgba(16,32,49,.78),rgba(16,32,49,.86)),
+    url("https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=1600&auto=format") center/cover;
+    color:#fff;padding:56px 0 46px}
+  .page-hero h1{color:#fff;font-size:clamp(1.8rem,4vw,2.7rem)}
+  .page-hero p{color:#dce6ef;font-size:1.05rem;max-width:52ch;margin:.5rem 0 0}
+
+  /* ---- Map block ---- */
+  .map-section{background:var(--bg-soft);padding:0}
+  .map-wrap{position:relative}
+  #coverage-map{width:100%;height:520px}
+  .map-legend{position:absolute;bottom:18px;left:18px;z-index:1000;background:#fff;border:1px solid var(--line);
+    padding:12px 16px;font-size:.82rem;line-height:2;pointer-events:none}
+  .map-legend span{display:inline-block;width:14px;height:14px;border-radius:50%;margin-right:7px;vertical-align:middle}
+  .map-legend .dot-base{background:#b85a22;border:2px solid #7a3a15}
+  .map-legend .dot-zone{background:rgba(28,51,71,.15);border:2px solid #1c3347}
+
+  /* ---- Areas grid ---- */
+  .areas-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px}
+  .area-card{background:#fff;border:1px solid var(--line);padding:16px 18px;display:flex;flex-direction:column;gap:4px;
+    border-top:3px solid var(--accent);transition:box-shadow .15s}
+  .area-card:hover{box-shadow:0 4px 18px rgba(16,32,49,.1)}
+  .area-card h3{margin:0;font-size:1rem;color:var(--brand)}
+  .area-card .postcode{font-size:.8rem;color:var(--muted);font-weight:600;letter-spacing:.04em}
+  .area-card .dist{font-size:.78rem;color:var(--muted);margin-top:2px}
+  .area-card a{margin-top:8px;font-size:.82rem;font-weight:600;color:var(--accent);text-decoration:none}
+  .area-card a:hover{text-decoration:underline}
+
+  /* ---- Divider ---- */
+  .sub-divider{border:0;border-top:2px solid var(--accent);margin:36px 0}
+
+  /* ---- Responsive ---- */
+  @media(max-width:1000px){.areas-grid{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:700px){.areas-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:430px){.areas-grid{grid-template-columns:1fr}}
+  @media(max-width:700px){#coverage-map{height:380px}}
+</style>
+</head>
+<body>
+
+<!-- ===== Top bar ===== -->
+<div class="topbar" role="region" aria-label="Contact and trust info">
+  <div class="wrap">
+    <span class="topbar-msg">⚡ Roof leaking? We're available 24/7 across Birmingham &amp; West Midlands</span>
+    <div class="topbar-badges">
+      <a href="/#reviews" class="topbar-badge">★ 5.0 Google</a>
+      <span class="topbar-badge">Family-run</span>
+      <span class="topbar-badge">Fully Insured</span>
+      <a href="tel:+447887479143" class="topbar-badge topbar-badge--cta">CALL 07887 479143</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Header ===== -->
+<header class="site"><div class="wrap">
+  <a href="/" class="logo">DK<b>Roofing</b></a>
+  <nav class="main" id="nav">
+    <a href="/services/">Services</a>
+    <a href="/services/roof-repairs.html">Roof Repairs</a>
+    <a href="/services/flat-roofing.html">Flat Roofing</a>
+    <a href="/areas/" aria-current="page">Areas</a>
+    <a href="/projects.html">Projects</a>
+    <a href="/reviews.html">Reviews</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
+  <div class="header-cta">
+    <a class="header-phone" href="tel:+447887479143">07887 479143</a>
+    <a class="btn btn-primary" href="#quote">Get a Free Quote</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+  </div>
+</div></header>
+
+<!-- ===== Page hero ===== -->
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow" style="color:#ffd0bb">Based in Kings Heath, B14</p>
+    <h1>Areas We Cover</h1>
+    <p>We travel up to 20 miles from our base in Kings Heath — covering all of Birmingham and the wider West Midlands. If you're not sure whether we reach you, just call.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px">
+      <a class="btn btn-primary" href="#quote">Get a Free Quote</a>
+      <a class="btn btn-ghost" href="tel:+447887479143" style="color:#fff;border-color:rgba(255,255,255,.5)">Call 07887 479143</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Interactive coverage map ===== -->
+<div class="map-wrap">
+  <div id="coverage-map" role="region" aria-label="DK Roofing Solutions coverage map"></div>
+  <div class="map-legend">
+    <div><span class="dot-base"></span> DK Roofing base — Kings Heath B14</div>
+    <div><span class="dot-zone"></span> Coverage zone (≈20 miles)</div>
+  </div>
+</div>
+
+<!-- ===== Areas content section ===== -->
+<section class="section">
+<div class="wrap">
+
+  <div class="center">
+    <p class="eyebrow">Every Postcode We Serve</p>
+    <h2>Birmingham &amp; West Midlands Coverage</h2>
+    <p class="lead">We work across the whole of Birmingham plus Solihull, Sandwell, Dudley, Walsall and parts of Worcestershire — all within our regular working radius.</p>
+  </div>
+
+  <div class="areas-grid">
+
+    <!-- Birmingham south / base area -->
+    <div class="area-card">
+      <h3>Kings Heath</h3>
+      <div class="postcode">B14</div>
+      <div class="dist">📍 Home base</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Moseley</h3>
+      <div class="postcode">B13</div>
+      <div class="dist">~1 mile</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Hall Green</h3>
+      <div class="postcode">B28</div>
+      <div class="dist">~2 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Bournville</h3>
+      <div class="postcode">B30</div>
+      <div class="dist">~2 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Kings Norton</h3>
+      <div class="postcode">B30 / B38</div>
+      <div class="dist">~3 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Stirchley</h3>
+      <div class="postcode">B30</div>
+      <div class="dist">~2 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Selly Oak</h3>
+      <div class="postcode">B29</div>
+      <div class="dist">~3 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Harborne</h3>
+      <div class="postcode">B17</div>
+      <div class="dist">~4 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+
+    <!-- Birmingham central / north / east -->
+    <div class="area-card">
+      <h3>Edgbaston</h3>
+      <div class="postcode">B15 / B16</div>
+      <div class="dist">~4 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Birmingham City</h3>
+      <div class="postcode">B1 – B5</div>
+      <div class="dist">~5 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Erdington</h3>
+      <div class="postcode">B23 / B24</div>
+      <div class="dist">~8 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Aston</h3>
+      <div class="postcode">B6 / B7</div>
+      <div class="dist">~6 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Handsworth</h3>
+      <div class="postcode">B20 / B21</div>
+      <div class="dist">~7 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Perry Barr</h3>
+      <div class="postcode">B42 / B43</div>
+      <div class="dist">~8 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Sutton Coldfield</h3>
+      <div class="postcode">B72 – B76</div>
+      <div class="dist">~11 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Acocks Green</h3>
+      <div class="postcode">B27</div>
+      <div class="dist">~4 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+
+    <!-- Longbridge / south -->
+    <div class="area-card">
+      <h3>Longbridge</h3>
+      <div class="postcode">B45</div>
+      <div class="dist">~5 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Northfield</h3>
+      <div class="postcode">B31</div>
+      <div class="dist">~4 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Rubery</h3>
+      <div class="postcode">B45</div>
+      <div class="dist">~7 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Redditch</h3>
+      <div class="postcode">B97 / B98</div>
+      <div class="dist">~13 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Bromsgrove</h3>
+      <div class="postcode">B60 / B61</div>
+      <div class="dist">~12 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+
+    <!-- Solihull / east -->
+    <div class="area-card">
+      <h3>Shirley</h3>
+      <div class="postcode">B90</div>
+      <div class="dist">~5 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Solihull</h3>
+      <div class="postcode">B91 / B92</div>
+      <div class="dist">~7 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Chelmsley Wood</h3>
+      <div class="postcode">B37</div>
+      <div class="dist">~9 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Knowle</h3>
+      <div class="postcode">B93</div>
+      <div class="dist">~11 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+
+    <!-- Sandwell / west -->
+    <div class="area-card">
+      <h3>West Bromwich</h3>
+      <div class="postcode">B70 / B71</div>
+      <div class="dist">~8 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Smethwick</h3>
+      <div class="postcode">B66 / B67</div>
+      <div class="dist">~6 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Oldbury</h3>
+      <div class="postcode">B68 / B69</div>
+      <div class="dist">~8 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Halesowen</h3>
+      <div class="postcode">B62 / B63</div>
+      <div class="dist">~8 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+
+    <!-- Dudley / Walsall / Wolverhampton -->
+    <div class="area-card">
+      <h3>Dudley</h3>
+      <div class="postcode">DY1 / DY2</div>
+      <div class="dist">~11 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Stourbridge</h3>
+      <div class="postcode">DY8 / DY9</div>
+      <div class="dist">~13 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Walsall</h3>
+      <div class="postcode">WS1 – WS5</div>
+      <div class="dist">~12 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Wolverhampton</h3>
+      <div class="postcode">WV1 – WV6</div>
+      <div class="dist">~16 miles</div>
+      <a href="#quote">Get a quote →</a>
+    </div>
+
+  </div>
+
+  <hr class="sub-divider">
+
+  <!-- Not listed notice -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center">
+    <div>
+      <p class="eyebrow">Not on the list?</p>
+      <h2 style="font-size:1.6rem">We Might Still Cover You</h2>
+      <p style="color:var(--muted);line-height:1.7">The list above covers our regular areas but we do travel further for larger jobs — full re-roofs, commercial projects and larger flat roof installations. Give us a call and we'll let you know straight away whether we can reach you.</p>
+      <a class="btn btn-primary" href="tel:+447887479143" style="margin-top:10px">Call 07887 479143</a>
+    </div>
+    <div style="background:#fff;border:1px solid var(--line);padding:28px;border-top:3px solid var(--accent)">
+      <h3 style="margin-top:0">Why choose a local roofer?</h3>
+      <ul style="line-height:2.1;padding-left:1.2rem;color:var(--muted)">
+        <li>Faster response — often same day</li>
+        <li>No call-centre — speak directly to Dennis</li>
+        <li>We know the local housing stock and roofing styles</li>
+        <li>Easy to return if there's ever a warranty issue</li>
+        <li>Supporting a Birmingham family business</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- ===== Quote form ===== -->
+<section class="section cta-band" id="quote">
+<div class="wrap" style="display:grid;gap:40px;grid-template-columns:1fr 1fr;align-items:center">
+  <div>
+    <p class="eyebrow" style="color:#ffd0bb">Free · No Obligation</p>
+    <h2>Get a Free Quote in Your Area</h2>
+    <p class="lead" style="color:#dce6ef">Tell us your postcode and what's needed — we'll confirm we cover you and give you a free, fixed quote. Need us quickly? Call <a href="tel:+447887479143" style="color:#fff;text-decoration:underline">07887 479143</a>.</p>
+    <ul style="line-height:2">
+      <li>✓ Free site survey included</li>
+      <li>✓ Usually within 2–3 days</li>
+      <li>✓ Emergency same-day response available</li>
+    </ul>
+  </div>
+  <form class="quote-form" id="quoteForm" onsubmit="return window.__submitQuote(event)">
+    <input name="name" placeholder="Your name" required>
+    <input name="phone" type="tel" placeholder="Phone number" required>
+    <input name="postcode" placeholder="Your postcode (e.g. B14, B90, DY1)" required>
+    <select name="job" required>
+      <option value="">Type of roofing work</option>
+      <option>Roof repair</option>
+      <option>EPDM or GRP flat roof</option>
+      <option>Full re-roof</option>
+      <option>Emergency call-out</option>
+      <option>Guttering / fascias</option>
+      <option>Not sure — need a survey</option>
+    </select>
+    <textarea name="message" placeholder="Tell us a bit more (roof size, age, current problem)"></textarea>
+    <button class="btn btn-primary" type="submit">Send My Free Quote Request</button>
+    <small style="color:#bcccda">We'll never share your details. Replies usually within a few hours.</small>
+  </form>
+</div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="site"><div class="wrap">
+  <div>
+    <div class="logo" style="color:#fff">DK<b>Roofing</b></div>
+    <p>Family-run roofing contractors covering Birmingham &amp; the West Midlands. Flat roofing, pitched roofing, repairs &amp; 24/7 emergency call-out.</p>
+    <p><b style="color:#fff">Call:</b> <a href="tel:+447887479143" style="display:inline">07887 479143</a><br>
+    <b style="color:#fff">Find us:</b> 37 Highters Road, Birmingham B14 4NA</p>
+  </div>
+  <div><h4>Services</h4>
+    <a href="/services/roof-repairs.html">Roof Repairs</a><a href="/services/flat-roofing.html">Flat Roofing</a>
+    <a href="/services/new-roofs.html">New Roofs &amp; Re-Roofing</a><a href="/services/emergency-roofing.html">Emergency Roofing</a>
+    <a href="/services/guttering-fascias-soffits.html">Guttering &amp; Fascias</a><a href="/services/commercial-roofing.html">Commercial</a>
+  </div>
+  <div><h4>Areas We Cover</h4>
+    <a href="/areas/">All areas</a>
+    <a href="/areas/kings-heath.html">Kings Heath</a><a href="/areas/moseley.html">Moseley</a>
+    <a href="/areas/hall-green.html">Hall Green</a><a href="/areas/solihull.html">Solihull</a>
+    <a href="/areas/sutton-coldfield.html">Sutton Coldfield</a>
+  </div>
+  <div><h4>Why DK Roofing</h4>
+    <p>★ 5.0 customer rating<br>✓ Family-run business<br>✓ Flat &amp; pitched specialists<br>✓ Fully insured &amp; guaranteed</p>
+  </div>
+</div>
+<div class="wrap" style="border-top:1px solid #2b3640;margin-top:24px;padding-top:18px;font-size:.85rem">
+  © 2026 DK Roofing Solutions · 37 Highters Road, Birmingham B14 · <a href="tel:+447887479143" style="color:#cbd5dd">07887 479143</a>
+</div>
+</footer>
+
+<!-- ===== Mobile bar ===== -->
+<div class="mobile-bar">
+  <a class="call" href="tel:+447887479143">📞 Call Now</a>
+  <a class="quote" href="#quote">Free Quote</a>
+</div>
+
+<!-- ===== Chat widget ===== -->
+<button id="chat-launcher">💬 Ask / Book a Quote</button>
+<div id="chat-panel" aria-live="polite">
+  <header>
+    <div><b>DK Roofing Assistant</b><div class="sub">Answers questions &amp; books quotes · 24/7</div></div>
+    <button id="chat-close" aria-label="Close" style="background:none;border:0;color:#fff;font-size:1.3rem;cursor:pointer">×</button>
+  </header>
+  <div id="chat-log"></div>
+  <form id="chat-form"><input id="chat-input" placeholder="Type your question…" autocomplete="off"><button type="submit" aria-label="Send">➤</button></form>
+</div>
+
+<script src="../js/main.js"></script>
+<script src="../js/chat-agent.js"></script>
+<script>
+(function () {
+  // DK Roofing base: Kings Heath B14
+  var LAT = 52.4255, LNG = -1.8756;
+  var RADIUS_M = 32187; // 20 miles in metres
+
+  var map = L.map('coverage-map', {
+    center: [LAT, LNG],
+    zoom: 10,
+    scrollWheelZoom: false,
+    zoomControl: true
+  });
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 18
+  }).addTo(map);
+
+  // Coverage circle
+  L.circle([LAT, LNG], {
+    radius: RADIUS_M,
+    color: '#1c3347',
+    weight: 2,
+    opacity: 0.7,
+    fillColor: '#1c3347',
+    fillOpacity: 0.12
+  }).addTo(map);
+
+  // Custom marker for the base
+  var baseIcon = L.divIcon({
+    className: '',
+    html: '<div style="width:16px;height:16px;background:#b85a22;border:3px solid #7a3a15;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.35)"></div>',
+    iconSize: [16, 16],
+    iconAnchor: [8, 8]
+  });
+
+  L.marker([LAT, LNG], { icon: baseIcon })
+    .addTo(map)
+    .bindPopup(
+      '<b style="font-family:Oswald,sans-serif;font-size:1rem;color:#1c3347">DK Roofing Solutions</b>' +
+      '<br>37 Highters Road, Birmingham B14' +
+      '<br><a href="tel:+447887479143" style="color:#b85a22;font-weight:600">07887 479143</a>'
+    )
+    .openPopup();
+
+  // Dot markers for key nearby towns
+  var towns = [
+    { name: 'Solihull',        lat: 52.4124, lng: -1.7781 },
+    { name: 'Sutton Coldfield',lat: 52.5636, lng: -1.8233 },
+    { name: 'West Bromwich',   lat: 52.5186, lng: -1.9941 },
+    { name: 'Dudley',          lat: 52.5088, lng: -2.0827 },
+    { name: 'Walsall',         lat: 52.5858, lng: -1.9825 },
+    { name: 'Wolverhampton',   lat: 52.5862, lng: -2.1284 },
+    { name: 'Redditch',        lat: 52.3065, lng: -1.9454 },
+    { name: 'Bromsgrove',      lat: 52.3345, lng: -2.0571 }
+  ];
+
+  var dotIcon = L.divIcon({
+    className: '',
+    html: '<div style="width:9px;height:9px;background:#fff;border:2px solid #1c3347;border-radius:50%"></div>',
+    iconSize: [9, 9],
+    iconAnchor: [4, 4]
+  });
+
+  towns.forEach(function (t) {
+    L.marker([t.lat, t.lng], { icon: dotIcon })
+      .addTo(map)
+      .bindTooltip(t.name, { permanent: false, direction: 'top', className: 'area-tip' });
+  });
+})();
+</script>
+
+<style>
+  /* Leaflet tooltip tweak */
+  .area-tip{background:var(--brand);color:#fff;border:0;padding:4px 10px;font-family:'Inter',sans-serif;font-size:.8rem;border-radius:0}
+  .area-tip::before{border-top-color:var(--brand)}
+</style>
+</body>
+</html>
