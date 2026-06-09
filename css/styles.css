@@ -36,17 +36,16 @@ h2{font-size:clamp(1.5rem,3.5vw,2.3rem)}
 .grid{display:grid;gap:24px}
 .eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;font-weight:700;color:var(--accent)}
 
-/* ---------- Emergency banner ---------- */
-.emergency-bar{background:var(--emergency);color:#fff;font-family:var(--font-heading);font-size:.85rem;letter-spacing:.08em}
-.emergency-bar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:9px 20px;flex-wrap:wrap}
-.emergency-cta{background:#fff;color:var(--emergency);font-weight:700;padding:5px 16px;border-radius:4px;white-space:nowrap;font-size:.8rem}
-.emergency-cta:hover{background:rgba(255,255,255,.85)}
-
 /* ---------- Top bar + header ---------- */
-.topbar{background:var(--brand);color:#fff;font-size:.9rem}
-.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 20px;flex-wrap:wrap}
-.topbar a{color:#fff;font-weight:600}
-.topbar .badges span{margin-left:14px;opacity:.95}
+.topbar{background:var(--brand);color:#fff;font-size:.85rem;font-family:var(--font-heading);letter-spacing:.04em}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:8px 20px;flex-wrap:wrap}
+.topbar-msg{opacity:.92}
+.topbar-badges{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.topbar-badge{display:inline-flex;align-items:center;padding:4px 12px;border:1px solid rgba(255,255,255,.35);border-radius:0;font-size:.78rem;font-weight:700;color:#fff;white-space:nowrap;transition:background .15s,border-color .15s}
+a.topbar-badge{cursor:pointer}
+a.topbar-badge:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.7)}
+.topbar-badge--cta{background:var(--accent);border-color:var(--accent)}
+.topbar-badge--cta:hover{background:var(--accent-dk);border-color:var(--accent-dk)}
 header.site{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--line)}
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 20px}
 .logo{font-family:var(--font-heading);font-weight:700;font-size:1.4rem;color:var(--brand);display:flex;align-items:center;gap:.5rem;text-transform:uppercase;letter-spacing:.05em}
