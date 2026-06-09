@@ -35,11 +35,13 @@
   .pricing-table tr:nth-child(even) td{background:var(--bg-soft)}
   .pricing-table .price{font-weight:700;color:var(--brand);white-space:nowrap}
 
-  .signs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:28px}
-  .sign-item{background:#fff;border:1px solid var(--line);padding:18px;display:flex;gap:12px;align-items:flex-start}
-  .sign-icon{font-size:1.4rem;flex-shrink:0;margin-top:2px}
-  .sign-item h4{margin:0 0 4px;font-size:.95rem;color:var(--brand)}
-  .sign-item p{margin:0;font-size:.88rem;color:var(--muted);line-height:1.5}
+  .signs-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:28px}
+  .sign-item{background:#fff;border:1px solid var(--line);padding:16px 12px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px}
+  .sign-icon{font-size:1.6rem}
+  .sign-item h4{margin:0 0 4px;font-size:.85rem;color:var(--brand)}
+  .sign-item p{margin:0;font-size:.78rem;color:var(--muted);line-height:1.45}
+  @media(max-width:860px){.signs-grid{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:500px){.signs-grid{grid-template-columns:repeat(2,1fr)}}
 
   .price-note{background:var(--bg-soft);border:1px solid var(--line);padding:16px 20px;margin-top:28px;font-size:.9rem;color:var(--muted)}
   .price-note strong{color:var(--ink)}
