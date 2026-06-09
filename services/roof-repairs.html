@@ -17,15 +17,17 @@
   .page-hero h1{color:#fff;font-size:clamp(1.8rem,4vw,2.8rem)}
   .page-hero p{color:#dce6ef;font-size:1.1rem;max-width:52ch;margin:.6rem 0 0}
 
-  .repair-types{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:36px}
-  .repair-type{background:#fff;border:1px solid var(--line);padding:30px 28px;border-left:4px solid var(--accent)}
-  .repair-type h3{font-size:1.2rem;margin:0 0 10px;color:var(--brand)}
-  .repair-type p{margin:0;color:var(--muted);font-size:1rem;line-height:1.65}
-  .repair-type .price-tag{display:inline-block;margin-top:14px;font-weight:700;color:var(--accent);font-family:var(--font-heading);font-size:1.1rem}
-  .repair-risk{margin-top:16px;padding:14px 16px;background:#fdf3f1;border-left:3px solid #c0392b}
-  .repair-risk .risk-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:#c0392b;margin-bottom:6px}
-  .repair-risk p{margin:0;font-size:.9rem;color:#5a2a24;line-height:1.6}
-  @media(max-width:700px){.repair-types{grid-template-columns:1fr}}
+  .repair-types{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+  .repair-type{background:#fff;border:1px solid var(--line);padding:18px 16px;border-left:4px solid var(--accent);display:flex;flex-direction:column}
+  .repair-type h3{font-size:.98rem;margin:0 0 8px;color:var(--brand)}
+  .repair-type p{margin:0;color:var(--muted);font-size:.83rem;line-height:1.55}
+  .repair-type .price-tag{display:inline-block;margin-top:12px;font-weight:700;color:var(--accent);font-family:var(--font-heading);font-size:.95rem}
+  .repair-risk{margin-top:12px;padding:10px 12px;background:#fdf3f1;border-left:3px solid #c0392b;flex:1}
+  .repair-risk .risk-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:#c0392b;margin-bottom:5px}
+  .repair-risk p{margin:0;font-size:.8rem;color:#5a2a24;line-height:1.5}
+  .sub-divider{border:0;border-top:2px solid var(--accent);margin:36px 0}
+  @media(max-width:900px){.repair-types{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:500px){.repair-types{grid-template-columns:1fr}}
 
   .pricing-table{width:100%;border-collapse:collapse;margin-top:28px;font-size:.95rem}
   .pricing-table th{background:var(--brand);color:#fff;padding:12px 16px;text-align:left;font-family:var(--font-heading);letter-spacing:.04em}
@@ -96,26 +98,26 @@
   </div>
 </section>
 
-<!-- ===== Signs you need a repair ===== -->
-<section class="section alt">
-<div class="wrap center">
-  <p class="eyebrow">Don't Ignore These</p>
-  <h2>Signs You Need a Roof Repair</h2>
-  <p class="lead">Caught early, most repairs are quick and affordable. Left too long, small problems become expensive ones.</p>
-</div>
-<div class="signs-grid wrap" style="margin-top:0">
-  <div class="sign-item"><div class="sign-icon">💧</div><div><h4>Water stains on ceilings</h4><p>Brown or damp patches on ceilings are almost always a sign of a roof leak above.</p></div></div>
-  <div class="sign-item"><div class="sign-icon">🪨</div><div><h4>Missing or broken tiles</h4><p>A single displaced tile exposes the felt beneath and lets water in within weeks.</p></div></div>
-  <div class="sign-item"><div class="sign-icon">🌿</div><div><h4>Moss &amp; algae growth</h4><p>Heavy moss holds moisture against tiles and breaks down the surface over time.</p></div></div>
-  <div class="sign-item"><div class="sign-icon">🔩</div><div><h4>Cracked or loose flashings</h4><p>Flashings around chimneys, skylights and valleys are a common entry point for leaks.</p></div></div>
-  <div class="sign-item"><div class="sign-icon">🧱</div><div><h4>Crumbling mortar on ridge</h4><p>Ridge tiles bedded in old mortar loosen over time — they can fall off in high winds.</p></div></div>
-  <div class="sign-item"><div class="sign-icon">🌫️</div><div><h4>Damp or musty loft</h4><p>Persistent damp smell in your loft often means water is getting in at a small point above.</p></div></div>
-</div>
-</section>
-
-<!-- ===== Types of repair ===== -->
+<!-- ===== All content — one section ===== -->
 <section class="section">
 <div class="wrap">
+
+  <div class="center">
+    <p class="eyebrow">Don't Ignore These</p>
+    <h2>Signs You Need a Roof Repair</h2>
+    <p class="lead">Caught early, most repairs are quick and affordable. Left too long, small problems become expensive ones.</p>
+  </div>
+  <div class="signs-grid" style="margin-top:20px">
+    <div class="sign-item"><div class="sign-icon">💧</div><div><h4>Water stains on ceilings</h4><p>Brown or damp patches on ceilings are almost always a sign of a roof leak above.</p></div></div>
+    <div class="sign-item"><div class="sign-icon">🪨</div><div><h4>Missing or broken tiles</h4><p>A single displaced tile exposes the felt beneath and lets water in within weeks.</p></div></div>
+    <div class="sign-item"><div class="sign-icon">🌿</div><div><h4>Moss &amp; algae growth</h4><p>Heavy moss holds moisture against tiles and breaks down the surface over time.</p></div></div>
+    <div class="sign-item"><div class="sign-icon">🔩</div><div><h4>Cracked or loose flashings</h4><p>Flashings around chimneys, skylights and valleys are a common entry point for leaks.</p></div></div>
+    <div class="sign-item"><div class="sign-icon">🧱</div><div><h4>Crumbling mortar on ridge</h4><p>Ridge tiles bedded in old mortar loosen over time — they can fall off in high winds.</p></div></div>
+    <div class="sign-item"><div class="sign-icon">🌫️</div><div><h4>Damp or musty loft</h4><p>Persistent damp smell in your loft often means water is getting in at a small point above.</p></div></div>
+  </div>
+
+  <hr class="sub-divider">
+
   <div class="center">
     <p class="eyebrow">What We Repair</p>
     <h2>Types of Roof Repair We Cover</h2>
@@ -203,12 +205,9 @@
     </div>
 
   </div>
-</div>
-</section>
 
-<!-- ===== Pricing table ===== -->
-<section class="section alt">
-<div class="wrap">
+  <hr class="sub-divider">
+
   <div class="center">
     <p class="eyebrow">Guide Prices</p>
     <h2>Roof Repair Costs in Birmingham</h2>
@@ -245,6 +244,7 @@
       <div class="step"><h3>Guaranteed</h3><p>Every repair comes with a workmanship guarantee. If it comes back, so do we.</p></div>
     </div>
   </div>
+
 </div>
 </section>
 
