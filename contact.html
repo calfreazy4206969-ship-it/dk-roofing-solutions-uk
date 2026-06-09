@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact DK Roofing Solutions | Birmingham Roofers — Free Quotes &amp; Emergency Call-Out</title>
+<meta name="description" content="Contact DK Roofing Solutions in Kings Heath, Birmingham. Call 07887 479143 for a free quote or emergency roof repair. Family-run, fully insured, fast response.">
+<link rel="canonical" href="https://www.dkroofingsolutionsuk.co.uk/contact.html">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<style>
+  /* ---- Hero ---- */
+  .page-hero{background:linear-gradient(rgba(16,32,49,.78),rgba(16,32,49,.84)),
+    url("images/work-scaffold-1.jpg") center/cover;
+    color:#fff;padding:64px 0 56px}
+  .page-hero h1{color:#fff;font-size:clamp(1.8rem,4vw,2.8rem)}
+  .page-hero p{color:#dce6ef;font-size:1.1rem;max-width:52ch;margin:.6rem 0 0}
+
+  /* ---- Contact grid (mirrors services 3-col) ---- */
+  .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:40px}
+  @media(max-width:900px){.contact-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:600px){.contact-grid{grid-template-columns:1fr}}
+
+  .contact-card{background:#fff;border:1px solid var(--line);padding:28px;display:flex;flex-direction:column;gap:12px}
+  .contact-card .card-icon{font-size:2rem;line-height:1}
+  .contact-card h3{font-size:1.2rem;margin:0;color:var(--brand)}
+  .contact-card p{color:var(--muted);line-height:1.65;margin:0;font-size:.95rem}
+  .contact-card a.card-action{
+    margin-top:auto;align-self:flex-start;
+    display:inline-block;padding:10px 20px;
+    background:var(--brand);color:#fff;
+    font-family:var(--font-heading);font-weight:700;font-size:.9rem;
+    letter-spacing:.04em;text-decoration:none;
+    border:2px solid var(--brand);transition:background .15s,color .15s}
+  .contact-card a.card-action:hover{background:transparent;color:var(--brand)}
+  .contact-card a.card-action--emergency{background:var(--emergency);border-color:var(--emergency)}
+  .contact-card a.card-action--emergency:hover{background:transparent;color:var(--emergency)}
+
+  /* ---- Main layout: form + info ---- */
+  .contact-main{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start;margin-top:40px}
+  @media(max-width:860px){.contact-main{grid-template-columns:1fr}}
+
+  /* ---- Info panel ---- */
+  .info-panel{display:flex;flex-direction:column;gap:20px}
+  .info-block{background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);padding:20px 22px}
+  .info-block h4{margin:0 0 6px;font-size:1rem;color:var(--brand)}
+  .info-block p{margin:0;font-size:.9rem;color:var(--muted);line-height:1.7}
+  .info-block a{color:var(--accent);font-weight:600}
+
+  /* ---- Map ---- */
+  #contact-map{width:100%;height:280px;margin-top:20px}
+
+  /* ---- Hours table ---- */
+  .hours-table{width:100%;border-collapse:collapse;font-size:.9rem}
+  .hours-table td{padding:7px 0;border-bottom:1px solid var(--line);color:var(--muted)}
+  .hours-table td:first-child{color:var(--ink);font-weight:600;width:45%}
+  .hours-table tr:last-child td{border:0}
+  .hours-open{color:var(--ok) !important;font-weight:700 !important}
+
+  .sub-divider{border:0;border-top:2px solid var(--accent);margin:40px 0}
+</style>
+</head>
+<body>
+
+<!-- ===== Top bar ===== -->
+<div class="topbar" role="region" aria-label="Contact and trust info">
+  <div class="wrap">
+    <span class="topbar-msg">⚡ Roof leaking? We're available 24/7 across Birmingham &amp; West Midlands</span>
+    <div class="topbar-badges">
+      <a href="/reviews.html" class="topbar-badge">★ 5.0 Google</a>
+      <span class="topbar-badge">Family-run</span>
+      <span class="topbar-badge">Fully Insured</span>
+      <a href="tel:+447887479143" class="topbar-badge topbar-badge--cta">CALL 07887 479143</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Header ===== -->
+<header class="site"><div class="wrap">
+  <a href="/" class="logo">DK<b>Roofing</b></a>
+  <nav class="main" id="nav">
+    <a href="/services/">Services</a>
+    <a href="/services/roof-repairs.html">Roof Repairs</a>
+    <a href="/services/flat-roofing.html">Flat Roofing</a>
+    <a href="/areas/">Areas</a>
+    <a href="/projects.html">Projects</a>
+    <a href="/reviews.html">Reviews</a>
+    <a href="/contact.html" aria-current="page">Contact</a>
+  </nav>
+  <div class="header-cta">
+    <a class="header-phone" href="tel:+447887479143">07887 479143</a>
+    <a class="btn btn-primary" href="#quote-form">Get a Free Quote</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+  </div>
+</div></header>
+
+<!-- ===== Hero ===== -->
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow" style="color:#ffd0bb">Kings Heath, Birmingham B14</p>
+    <h1>Get in Touch</h1>
+    <p>Call, email or fill in the form — we'll get back to you fast with a free, fixed quote. For emergencies, call directly and we'll prioritise your job.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px">
+      <a class="btn btn-primary" href="#quote-form">Send a Message</a>
+      <a class="btn btn-ghost" href="tel:+447887479143" style="color:#fff;border-color:rgba(255,255,255,.5)">📞 Call 07887 479143</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact options cards ===== -->
+<section class="section">
+<div class="wrap">
+
+  <div class="center">
+    <p class="eyebrow">How to Reach Us</p>
+    <h2>Contact DK Roofing Solutions</h2>
+    <p class="lead">Three ways to get in touch — choose whatever works best for you.</p>
+  </div>
+
+  <div class="contact-grid">
+
+    <div class="contact-card">
+      <div class="card-icon">📞</div>
+      <h3>Call Us Direct</h3>
+      <p>Speak directly to Dennis — no call centres, no hold music. For emergency leaks, calling is always the fastest option. We aim to answer every call.</p>
+      <div style="font-family:var(--font-heading);font-size:1.5rem;font-weight:700;color:var(--brand)">07887 479143</div>
+      <a class="card-action card-action--emergency" href="tel:+447887479143">Call Now</a>
+    </div>
+
+    <div class="contact-card">
+      <div class="card-icon">✉️</div>
+      <h3>Send a Message</h3>
+      <p>Fill in the form below with your details and a brief description of the job. We'll respond with a free, no-obligation quote — usually within a few hours.</p>
+      <p style="font-size:.85rem;color:var(--muted)">Typical reply time: <strong style="color:var(--ink)">same day</strong></p>
+      <a class="card-action" href="#quote-form">Go to Form</a>
+    </div>
+
+    <div class="contact-card">
+      <div class="card-icon">📍</div>
+      <h3>Our Location</h3>
+      <p>We're based in Kings Heath, B14 — right in the heart of the area we serve. We cover all of Birmingham and the West Midlands within a 20-mile radius.</p>
+      <p style="font-weight:600;color:var(--ink);font-size:.9rem">37 Highters Road<br>Birmingham B14 4NA</p>
+      <a class="card-action" href="/areas/">See all areas we cover</a>
+    </div>
+
+  </div>
+
+  <hr class="sub-divider">
+
+  <!-- ===== Form + info panel ===== -->
+  <div class="contact-main">
+
+    <!-- Quote form -->
+    <div>
+      <p class="eyebrow">Free · No Obligation</p>
+      <h2 style="font-size:1.7rem;margin-bottom:6px">Request a Free Quote</h2>
+      <p style="color:var(--muted);margin-bottom:24px;font-size:.95rem">Tell us about your roof and we'll be in touch with a free, fixed written price.</p>
+      <form class="quote-form" id="quote-form" onsubmit="return window.__submitQuote(event)" style="background:transparent;padding:0">
+        <input name="name" placeholder="Your full name" required>
+        <input name="phone" type="tel" placeholder="Phone number" required>
+        <input name="email" type="email" placeholder="Email address (optional)">
+        <input name="postcode" placeholder="Your postcode (e.g. B14, B28, B91)" required>
+        <select name="job" required>
+          <option value="">What do you need?</option>
+          <option>Roof repair (tiles, slates, ridge)</option>
+          <option>Flat roof — EPDM rubber</option>
+          <option>Flat roof — GRP fibreglass</option>
+          <option>Full re-roof</option>
+          <option>Emergency call-out</option>
+          <option>Chimney repoint or flashing</option>
+          <option>Guttering, fascias &amp; soffits</option>
+          <option>Garage roof replacement</option>
+          <option>Bay window roof</option>
+          <option>Not sure — need a survey</option>
+        </select>
+        <textarea name="message" placeholder="Describe the problem or job in a few words — roof age, what's happening, any urgency" rows="4"></textarea>
+        <button class="btn btn-primary" type="submit" style="width:100%;padding:14px">Send My Free Quote Request</button>
+        <small style="color:var(--muted);display:block;margin-top:8px">We'll never share your details with anyone. Replies usually within a few hours.</small>
+      </form>
+    </div>
+
+    <!-- Info panel -->
+    <div class="info-panel">
+
+      <div class="info-block">
+        <h4>📞 Phone</h4>
+        <p><a href="tel:+447887479143">07887 479143</a><br>
+        Call or text — Dennis picks up personally.</p>
+      </div>
+
+      <div class="info-block">
+        <h4>📍 Based in Kings Heath</h4>
+        <p>37 Highters Road<br>Birmingham B14 4NA<br><br>
+        We cover all of Birmingham and the West Midlands within a <strong>20-mile radius</strong>. <a href="/areas/">See all areas →</a></p>
+      </div>
+
+      <div class="info-block">
+        <h4>🕐 Hours</h4>
+        <table class="hours-table">
+          <tr><td>Monday – Friday</td><td class="hours-open">7:00am – 6:00pm</td></tr>
+          <tr><td>Saturday</td><td class="hours-open">8:00am – 4:00pm</td></tr>
+          <tr><td>Sunday</td><td>Emergency only</td></tr>
+          <tr><td>Emergency line</td><td class="hours-open">24 / 7</td></tr>
+        </table>
+      </div>
+
+      <div class="info-block" style="border-left-color:var(--emergency)">
+        <h4 style="color:var(--emergency)">⚡ Emergency Roof Repair</h4>
+        <p>Active leak or storm damage? Call the emergency line — we prioritise same-day attendance for active leaks across Birmingham.</p>
+        <a href="tel:+447887479143" style="display:inline-block;margin-top:10px;padding:10px 18px;background:var(--emergency);color:#fff;font-family:var(--font-heading);font-weight:700;font-size:.9rem;text-decoration:none;letter-spacing:.04em">📞 CALL FOR EMERGENCY</a>
+      </div>
+
+      <!-- Map -->
+      <div id="contact-map"></div>
+
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="site"><div class="wrap">
+  <div>
+    <div class="logo" style="color:#fff">DK<b>Roofing</b></div>
+    <p>Family-run roofing contractors covering Birmingham &amp; the West Midlands. Flat roofing, pitched roofing, repairs &amp; 24/7 emergency call-out.</p>
+    <p><b style="color:#fff">Call:</b> <a href="tel:+447887479143" style="display:inline">07887 479143</a><br>
+    <b style="color:#fff">Find us:</b> 37 Highters Road, Birmingham B14 4NA</p>
+  </div>
+  <div><h4>Services</h4>
+    <a href="/services/roof-repairs.html">Roof Repairs</a><a href="/services/flat-roofing.html">Flat Roofing</a>
+    <a href="/services/new-roofs.html">New Roofs &amp; Re-Roofing</a><a href="/services/emergency-roofing.html">Emergency Roofing</a>
+    <a href="/services/guttering-fascias-soffits.html">Guttering &amp; Fascias</a>
+  </div>
+  <div><h4>Areas We Cover</h4>
+    <a href="/areas/kings-heath.html">Kings Heath</a><a href="/areas/moseley.html">Moseley</a>
+    <a href="/areas/hall-green.html">Hall Green</a><a href="/areas/solihull.html">Solihull</a>
+    <a href="/areas/sutton-coldfield.html">Sutton Coldfield</a><a href="/areas/">All areas →</a>
+  </div>
+  <div><h4>Why DK Roofing</h4>
+    <p>★ 5.0 customer rating<br>✓ Family-run, Kings Heath B14<br>✓ Fully insured &amp; guaranteed<br>✓ Free written quotes</p>
+  </div>
+</div>
+<div class="wrap" style="border-top:1px solid #2b3640;margin-top:24px;padding-top:18px;font-size:.85rem">
+  © 2026 DK Roofing Solutions · 37 Highters Road, Birmingham B14 · <a href="tel:+447887479143" style="color:#cbd5dd">07887 479143</a>
+</div>
+</footer>
+
+<div class="mobile-bar">
+  <a class="call" href="tel:+447887479143">📞 Call Now</a>
+  <a class="quote" href="#quote-form">Free Quote</a>
+</div>
+
+<button id="chat-launcher">💬 Ask / Book a Quote</button>
+<div id="chat-panel" aria-live="polite">
+  <header>
+    <div><b>DK Roofing Assistant</b><div class="sub">Answers questions &amp; books quotes · 24/7</div></div>
+    <button id="chat-close" aria-label="Close" style="background:none;border:0;color:#fff;font-size:1.3rem;cursor:pointer">×</button>
+  </header>
+  <div id="chat-log"></div>
+  <form id="chat-form"><input id="chat-input" placeholder="Type your question…" autocomplete="off"><button type="submit" aria-label="Send">➤</button></form>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/chat-agent.js"></script>
+<script>
+(function(){
+  var map=L.map('contact-map',{center:[52.4255,-1.8756],zoom:14,scrollWheelZoom:false,zoomControl:true});
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',maxZoom:18}).addTo(map);
+  var ico=L.divIcon({className:'',html:'<div style="width:16px;height:16px;background:#b85a22;border:3px solid #7a3a15;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.4)"></div>',iconSize:[16,16],iconAnchor:[8,8]});
+  L.marker([52.4255,-1.8756],{icon:ico}).addTo(map)
+    .bindPopup('<b style="font-family:Oswald,sans-serif;color:#1c3347">DK Roofing Solutions</b><br>37 Highters Road<br>Kings Heath, Birmingham B14<br><a href="tel:+447887479143" style="color:#b85a22;font-weight:600">07887 479143</a>')
+    .openPopup();
+})();
+</script>
+</body>
+</html>
