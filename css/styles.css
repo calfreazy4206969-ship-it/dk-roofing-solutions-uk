@@ -50,7 +50,8 @@ header.site{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px s
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 20px}
 .logo{font-family:var(--font-heading);font-weight:700;font-size:1.4rem;color:var(--brand);display:flex;align-items:center;gap:.5rem;text-transform:uppercase;letter-spacing:.05em}
 .logo b{color:var(--accent)}
-nav.main a{font-weight:600;color:var(--slate-2);margin:0 12px}
+nav.main{flex:1;display:flex;justify-content:center;align-items:center;flex-wrap:nowrap}
+nav.main a{font-weight:600;color:var(--slate-2);margin:0 10px;white-space:nowrap;font-size:.93rem}
 nav.main a:hover{color:var(--accent)}
 .header-cta{display:flex;align-items:center;gap:12px}
 .header-phone{font-weight:800;color:var(--brand);font-size:1.05rem}
@@ -191,9 +192,9 @@ footer.site a:hover{color:var(--accent)}
 /* ---------- Responsive ---------- */
 @media(min-width:861px) and (max-width:1100px){.carousel-slide{flex:0 0 calc(50% - 16px)}}
 @media (max-width:860px){
-  nav.main{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:10px 20px}
-  nav.main.open{display:block}
-  nav.main a{display:block;margin:10px 0}
+  nav.main{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:10px 20px;flex-direction:column;align-items:flex-start}
+  nav.main.open{display:flex}
+  nav.main a{margin:10px 0;font-size:1rem}
   .nav-toggle{display:block}
   .header-phone{display:none}
   .mobile-bar{display:grid}
