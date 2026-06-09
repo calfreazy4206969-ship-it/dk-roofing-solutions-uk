@@ -103,7 +103,7 @@ window.__submitQuote = function (e) {
 
   function next(){ goTo(current >= total - getSlidesVisible() ? 0 : current + 1); }
   function prev(){ goTo(current - 1 < 0 ? total - getSlidesVisible() : current - 1); }
-  function startAuto(){ stopAuto(); timer = setInterval(next, 4500); }
+  function startAuto(){ stopAuto(); timer = setInterval(next, 3000); }
   function stopAuto(){ clearInterval(timer); }
 
   document.getElementById('reviewNext').addEventListener('click', function(){ stopAuto(); next(); startAuto(); });
