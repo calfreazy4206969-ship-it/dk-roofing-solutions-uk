@@ -158,7 +158,7 @@ footer.site a:hover{color:var(--accent)}
 /* ---------- Carousel ---------- */
 .carousel-section{padding:72px 0;background:var(--bg-soft);overflow:hidden}
 .carousel-track-wrap{position:relative;overflow:hidden}
-.carousel-track{display:flex;transition:transform .4s ease;will-change:transform}
+.carousel-track{display:flex;transition:transform .65s ease-in-out;will-change:transform}
 .carousel-slide{flex:0 0 calc(33.333% - 16px);margin:0 8px;position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3}
 .carousel-slide img{width:100%;height:100%;object-fit:cover;display:block}
 .carousel-cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(16,32,49,.85));color:#fff;font-weight:600;font-size:.9rem;padding:28px 14px 12px;font-family:var(--font)}
