@@ -1,0 +1,108 @@
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  .mock-section { border:1px solid #e3e8ec; border-radius:10px; overflow:hidden; margin-bottom:8px; font-family:'Inter',sans-serif; }
+  .mock-section-header { background:#16324f; color:#fff; padding:8px 14px; font-family:'Oswald',sans-serif; font-size:13px; letter-spacing:1px; text-transform:uppercase; }
+  .mock-section-body { padding:12px 14px; background:#fff; font-size:11px; color:#444; line-height:1.5; }
+  .badge-row { display:flex; gap:8px; flex-wrap:wrap; }
+  .badge { background:#f5f7f9; border:1px solid #e3e8ec; border-radius:6px; padding:6px 10px; font-size:10px; font-weight:600; color:#16324f; }
+  .before-after { display:grid; grid-template-columns:1fr 1fr; gap:4px; }
+  .ba-box { height:60px; border-radius:4px; display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;letter-spacing:1px;color:#fff; }
+  .gallery-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:4px; }
+  .gallery-box { height:45px; border-radius:4px; }
+  .faq-item { border-bottom:1px solid #f0f0f0; padding:6px 0; display:flex; justify-content:space-between; }
+</style>
+
+<h2>Which new sections should we add?</h2>
+<p class="subtitle">Select all that you want — these are what separate a professional site from a basic one</p>
+
+<div class="options" data-multiselect>
+
+  <div class="option" data-choice="accreditations" onclick="toggleSelect(this)">
+    <div class="letter">1</div>
+    <div class="content">
+      <h3>Accreditations &amp; Trust Badges Bar</h3>
+      <p>A bar showing Checkatrade, Trustmark, NFRC, "Fully Insured", and "5★ Google" logos. This is the single biggest trust signal a roofing site can add — visitors look for it immediately.</p>
+      <div class="mock-section" style="margin-top:8px">
+        <div class="mock-section-header">Trusted &amp; Accredited</div>
+        <div class="mock-section-body">
+          <div class="badge-row">
+            <div class="badge">✓ Checkatrade</div>
+            <div class="badge">✓ Trustmark</div>
+            <div class="badge">✓ NFRC Member</div>
+            <div class="badge">★ 5.0 Google</div>
+            <div class="badge">🛡 Fully Insured</div>
+            <div class="badge">📋 Free Quotes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="before-after" onclick="toggleSelect(this)">
+    <div class="letter">2</div>
+    <div class="content">
+      <h3>Before &amp; After Gallery</h3>
+      <p>Side-by-side photos of real jobs — the #1 thing homeowners look for on a roofer's website. Even 3–4 examples converts dramatically better than text alone. Placeholder images until DK sends real photos.</p>
+      <div class="mock-section" style="margin-top:8px">
+        <div class="mock-section-header">Our Work — Before &amp; After</div>
+        <div class="mock-section-body">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+            <div>
+              <div class="before-after">
+                <div class="ba-box" style="background:#888">BEFORE</div>
+                <div class="ba-box" style="background:#ff6a2b">AFTER</div>
+              </div>
+              <div style="font-size:9px;color:#666;margin-top:3px;text-align:center">Tile Re-roof, Kings Heath</div>
+            </div>
+            <div>
+              <div class="before-after">
+                <div class="ba-box" style="background:#888">BEFORE</div>
+                <div class="ba-box" style="background:#ff6a2b">AFTER</div>
+              </div>
+              <div style="font-size:9px;color:#666;margin-top:3px;text-align:center">Flat Roof, Moseley</div>
+            </div>
+            <div>
+              <div class="before-after">
+                <div class="ba-box" style="background:#888">BEFORE</div>
+                <div class="ba-box" style="background:#ff6a2b">AFTER</div>
+              </div>
+              <div style="font-size:9px;color:#666;margin-top:3px;text-align:center">Repair + Repoint, B14</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="faq" onclick="toggleSelect(this)">
+    <div class="letter">3</div>
+    <div class="content">
+      <h3>FAQ Section (with Google rich results)</h3>
+      <p>Common roofing questions answered — "How much does a new roof cost?", "Do I need planning permission?", "How long does a repair take?". Adds Google FAQ rich snippets that appear directly in search results.</p>
+      <div class="mock-section" style="margin-top:8px">
+        <div class="mock-section-header">Common Roofing Questions</div>
+        <div class="mock-section-body">
+          <div class="faq-item"><span>How much does a roof repair cost in Birmingham?</span><span style="color:#ff6a2b">▼</span></div>
+          <div class="faq-item"><span>How long does a new roof take?</span><span style="color:#ff6a2b">▼</span></div>
+          <div class="faq-item"><span>Do I need planning permission for a new roof?</span><span style="color:#ff6a2b">▼</span></div>
+          <div class="faq-item" style="border:0"><span>Is DK Roofing fully insured?</span><span style="color:#ff6a2b">▼</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="emergency-banner" onclick="toggleSelect(this)">
+    <div class="letter">4</div>
+    <div class="content">
+      <h3>Sticky Emergency Banner</h3>
+      <p>A bold, high-contrast bar pinned at the top (above the nav) for emergency call-outs — "Roof leaking? Call now: 07887 479143 — 60-min response". Disappears on scroll-down, reappears at top. Converts emergency searchers immediately.</p>
+      <div class="mock-section" style="margin-top:8px">
+        <div style="background:#cc2200;color:#fff;padding:8px 14px;font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:1px;display:flex;justify-content:space-between;align-items:center;border-radius:10px">
+          <span>⚡ ROOF LEAKING? 24/7 Emergency Roofing — Birmingham &amp; West Midlands</span>
+          <span style="background:#fff;color:#cc2200;padding:4px 10px;border-radius:4px;font-weight:700;font-size:11px">CALL NOW →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
