@@ -24,15 +24,22 @@ if (estGo) estGo.addEventListener('click', () => {
   document.getElementById('est-result').classList.add('show');
 });
 
-// Quote form submit — wire to your endpoint / email service / CRM
+// Quote form submit — sends enquiry via WhatsApp to 07887 479143
 window.__submitQuote = function (e) {
   e.preventDefault();
   const data = Object.fromEntries(new FormData(e.target).entries());
-  // TODO: POST `data` to /api/lead (email, Google Sheet, or CRM). Demo: log + thank.
-  console.log('LEAD CAPTURED →', data);
-  e.target.innerHTML = '<h3 style="color:#fff">✅ Thanks ' + (data.name||'') +
-    '!</h3><p style="color:#dce6ef">Your request is in. We\'ll call you on ' +
-    (data.phone||'your number') + ' shortly. Emergency? Call 0121 000 0000 now.</p>';
+  const lines = [
+    '🏠 *New Quote Request — DK Roofing Website*',
+    'Name: ' + (data.name || '—'),
+    'Phone: ' + (data.phone || '—'),
+    'Postcode: ' + (data.postcode || '—'),
+    'Job type: ' + (data.job || '—'),
+    'Details: ' + (data.message || '—')
+  ];
+  const waUrl = 'https://wa.me/447887479143?text=' + encodeURIComponent(lines.join('\n'));
+  window.open(waUrl, '_blank');
+  e.target.innerHTML = '<h3 style="color:#fff">✅ Thanks ' + (data.name || '') +
+    '!</h3><p style="color:#dce6ef">Your quote request is opening in WhatsApp — just hit send to reach us. Prefer to call? <a href="tel:+447887479143" style="color:#ffd0bb">07887 479143</a></p>';
   return false;
 };
 
