@@ -236,14 +236,13 @@ footer.site a:hover{color:var(--accent)}
 }
 
 @media(max-width:860px){
-  /* Why grid collapses to 2 cols on tablet */
-  .grid.why[style*="repeat(4"]{grid-template-columns:repeat(2,1fr) !important}
+  .why-est-grid{grid-template-columns:1fr !important}
   .estimator{padding:24px 18px}
   .estimator select,.estimator input{font-size:1.05rem;padding:.9rem}
   #est-result .price{font-size:2rem}
 }
 @media(max-width:540px){
-  .grid.why[style*="repeat(4"]{grid-template-columns:1fr !important}
+  .grid.why[style*="repeat(2"]{grid-template-columns:1fr !important}
 }
 
 @media(max-width:540px){
