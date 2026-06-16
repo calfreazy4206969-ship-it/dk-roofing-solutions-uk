@@ -193,14 +193,64 @@ footer.site a:hover{color:var(--accent)}
 /* ---------- Responsive ---------- */
 @media(min-width:861px) and (max-width:1100px){.carousel-slide{flex:0 0 calc(50% - 16px)}}
 @media (max-width:860px){
+  /* Nav */
   nav.main{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:10px 20px;flex-direction:column;align-items:flex-start}
   nav.main.open{display:flex}
   nav.main a{margin:10px 0;font-size:1rem}
   .nav-toggle{display:block}
   .header-phone{display:none}
+
+  /* Mobile bar */
   .mobile-bar{display:grid}
-  body{padding-bottom:54px}
-  #chat-launcher{bottom:70px}
-  #chat-panel{bottom:128px}
+  body{padding-bottom:56px}
+
+  /* Chat — above mobile bar */
+  #chat-launcher{bottom:72px;right:12px;padding:12px 16px;font-size:.88rem}
+  #chat-panel{bottom:132px;right:12px;width:calc(100vw - 24px);max-width:none}
+
+  /* Carousel */
   .carousel-slide{flex:0 0 calc(100% - 16px)}
+
+  /* Hero */
+  .hero .wrap{padding:56px 20px 48px}
+
+  /* Sections */
+  .section{padding:44px 0}
+
+  /* Topbar — hide badge row on small screens to prevent overflow */
+  .topbar-badges{display:none}
+  .topbar .wrap{justify-content:center;text-align:center}
+
+  /* CTA band quote grid — override inline 1fr 1fr */
+  .cta-band .wrap{grid-template-columns:1fr !important;gap:24px !important}
+  .quote-form{max-width:100%}
+
+  /* Local split on area/service pages */
+  .local-split{grid-template-columns:1fr !important}
+
+  /* Accred bar */
+  .accred-item{padding:6px 10px;font-size:.8rem}
+
+  /* Trust bar */
+  .trustbar .wrap{gap:12px;font-size:.9rem}
+}
+
+@media(max-width:540px){
+  /* Hero CTAs stack */
+  .hero-cta{flex-direction:column;gap:10px}
+  .hero-cta .btn{width:100%;justify-content:center;text-align:center}
+
+  /* Trust pills wrap tighter */
+  .hero-trust{gap:8px;font-size:.85rem}
+  .badge-pill{padding:4px 8px;font-size:.78rem}
+
+  /* Buttons full-width in hero */
+  .page-hero .btn{display:block;text-align:center}
+
+  /* Estimator */
+  .estimator{padding:20px}
+
+  /* Headings scale down more aggressively */
+  h1{font-size:1.7rem}
+  h2{font-size:1.35rem}
 }
