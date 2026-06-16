@@ -235,6 +235,14 @@ footer.site a:hover{color:var(--accent)}
   .trustbar .wrap{gap:12px;font-size:.9rem}
 }
 
+@media(max-width:860px){
+  .estimator-wrap{grid-template-columns:1fr !important;gap:28px !important}
+  .estimator{padding:28px 20px;width:100%}
+  .estimator select,.estimator input{font-size:1.05rem;padding:.9rem}
+  .estimator h3{font-size:1.4rem}
+  #est-result .price{font-size:2rem}
+}
+
 @media(max-width:540px){
   /* Hero CTAs stack */
   .hero-cta{flex-direction:column;gap:10px}
